@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$logowidth: 100%;
+@mixin inputMixin {
+  border: none;
+  text-align: center;
+  outline: none;
+}
+
+@mixin logoMixin {
+  height: 150px;
+  width: 350px;
+}
+
+@mixin blockMixin {
+  border-radius: 50px;
+  width: 150px;
+  height: 40px;
+  border: 3px solid #2e61c9;
+  box-shadow: 5px 5px 5px rgb(160, 148, 148);
+}
+
+@mixin buttonMixin {
+  text-decoration: none;
+  color: rgb(25, 39, 99);
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  background-color: white;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  .humburger {
+    display: none;
+  }
+  .logo_wrapper {
+    @include logoMixin();
+
+    .logo {
+      width: $logowidth;
+    }
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include blockMixin();
+
+    .btn {
+      @include buttonMixin();
+    }
+  }
+}
+
+.main_image {
+  width: 300px;
+}
+
+// SecondPage css
+.scan {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // height: 100vh;
+  h3 {
+    padding-top: 30px;
+  }
+  button {
+    background-color: red($color: #000000);
+  }
+  .logo_wrapper {
+    @include logoMixin();
+
+    .logo {
+      width: $logowidth;
+    }
+  }
+
+  .camera {
+    width: 300px;
+    
+  }
+}
+.same_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include buttonMixin();
+  @include blockMixin();
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Register page css
+.input-bigbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 60px;
+}
+.form {
+  width: 100%;
+  // height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .logo_wrapper {
+    @include logoMixin();
+
+    .logo {
+      width: $logowidth;
+    }
+  }
+  .input_field {
+    @include blockMixin();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .input {
+      @include inputMixin();
+      font-size: 12px;
+      font-weight: bold;
+      color: rgb(25, 39, 99);
+      width: 140px;
+    }
+  }
+}
+.icon_wrapper {
+  width: 200px;
+  display: flex;
+
+.but {
+  border: none;
+  margin-left: 200px;
+  background-color: white;
+}
+}
+
+// Fourth Page css
+
+.continue {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 120px;
+
+  .logo_wrapper {
+    @include logoMixin();
+
+    .logo {
+      width: $logowidth;
+    }
+  }
+ .btns{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:40px;
+  .same {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    .same_buttons {
+      @include blockMixin();
+      font-size: 16px;
+      font-weight: bold;
+      font-style: italic;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: white;
+
+    }
+  }
+ }
+ .icon {
+  background-color: white;
+
+  .same_icon {
+    border: none;
+    outline: none;
+    background-color: white;
+
+  }
+}
+}
+
+// Fifth Page css
+
+.end {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+
+  .logo_wrapper {
+    @include logoMixin();
+
+    .logo {
+      width: $logowidth;
+    }
+  }
+
+  .accept {
+    @include blockMixin();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .code {
+    @include blockMixin();
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 180px;
+    .number {
+      @include inputMixin();
+      border: none;
+      outline: none;
+    }
+  }
+
+  .text {
+    text-align: center;
+  }
+  .accept {
+    .acp_btn {
+      @include buttonMixin();
+      background-color: white;
+    }
+  }
+}
+.section {
+  max-width: 1000px;
+  margin: auto;
+}
+@media screen and (max-width: 600px) {
+  .main {
+    .humburger {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 20px;
+      font-size: 25px;
+    }
+    .image,
+    .button {
+      margin-top: 15%;
+    }
+  }
+
+  .scan {
+    .camera {
+      margin-bottom: 10%;
+    }
+  }
+  .form {
+    row-gap: 150px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  
+  .main {
+    .logo_wrapper{
+      .logo{
+        margin-top: 10%;
+      }
+    }
+    .humburger {
+      padding: 10px;
+    }
+  }
+  .form {
+    row-gap: 100px;
+  }
+}
